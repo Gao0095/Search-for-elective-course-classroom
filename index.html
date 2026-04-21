@@ -21,12 +21,12 @@ button:hover{background:#0056b3}
 <div class="container">
 
 <h2>
-  <span>受験番号</span>
-  <span>Application No.</span>
-  <span>准考证号</span>
+  <span>学籍番号</span>
+  <span>Student ID</span>
+  <span>学号</span>
 </h2>
 
-<input type="text" id="test_id" placeholder="Please enter your application number.">
+<input type="text" id="test_id" placeholder="Please enter your Student ID.">
 <button onclick="searchStudent()">検索 / Search</button>
 
 <div id="result"></div>
@@ -41,7 +41,7 @@ let studentMap = {};
 // 加载数据
 async function loadData(){
     try{
-        const res = await fetch('elective_classroom.json'); // ← 已修改
+        const res = await fetch('elective_classroom.json'); // json数据
         const arr = await res.json();
 
         arr.forEach(s => {
@@ -66,7 +66,7 @@ function searchStudent(){
 
     if(student){
         document.getElementById('result').innerText =
-`Application Number：${student.id}
+`Student ID：${student.id}
 Level：${student.level}
 Classroom：${student.classroom}
 School Building：${student.schoolbuilding}
