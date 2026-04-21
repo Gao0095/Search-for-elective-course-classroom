@@ -41,7 +41,7 @@ let studentMap = {};
 // 加载数据
 async function loadData(){
     try{
-        const res = await fetch('students.json');
+        const res = await fetch('Elective course classroom.json.json');
         const arr = await res.json();
 
         arr.forEach(s => {
